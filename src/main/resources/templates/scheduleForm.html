@@ -8,10 +8,24 @@
 </head>
 <body>
 <div class="container">
-    <h1>Create new schedule</h1>
+    <div th:if="${schedule.id == null}"><h1>Create new schedule</h1></div>
+    <div th:unless="${schedule.id == null}"><h1>Edit schedule</h1></div>
 
-    <form th:action="@{/schedule/new}" th:object="${schedule}" method="post">
+
+    <form th:action="@{/schedule/save}" th:object="${schedule}" method="post">
+        <input type="hidden" th:field="*{id}" th:value="${schedule.id}">
+
         <div class="m-3">
+            <div class="form-group row">
+                <label class="col-for-label col-sm-4">Группа:</label>
+                <div class="col-sm-8">
+                    <select th:field="*{group}" class="form-control" required>
+                        <th:block th:each="group: ${listGroups}">
+                            <option th:text="${group.nameGroup}" th:value="${group.id}"></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
             <div class="form-group row">
                 <label class="col-for-label col-sm-4">День недели</label>
                 <div class="col-sm-8">
@@ -19,11 +33,21 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-for-label col-sm-4">Урок:</label>
+                <label class="col-for-label col-sm-4">Номер урока:</label>
                 <div class="col-sm-8">
                     <select th:field="*{lesson}" class="form-control" required>
                         <th:block th:each="les: ${listLesson}">
-                            <option th:text="${les.name}" th:value="${les.id}"></option>
+                            <option th:text="${les.id}" th:value="${les.id}"></option>
+                        </th:block>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-for-label col-sm-4">Предмет:</label>
+                <div class="col-sm-8">
+                    <select th:field="*{subject}" class="form-control" required>
+                        <th:block th:each="sub: ${listSubjects}">
+                            <option th:text="${sub.nameSubject}" th:value="${sub.id}"></option>
                         </th:block>
                     </select>
                 </div>
@@ -48,16 +72,8 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group row">
-                <label class="col-for-label col-sm-4">Группа:</label>
-                <div class="col-sm-8">
-                    <select th:field="*{group}" class="form-control" required>
-                        <th:block th:each="group: ${listGroups}">
-                            <option th:text="${group.nameGroup}" th:value="${group.id}"></option>
-                        </th:block>
-                    </select>
-                </div>
-            </div>
+
+            <button type="submit" class="btn btn-primary">Save</button>
         </div>
     </form>
 </div>

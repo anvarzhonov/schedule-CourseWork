@@ -9,31 +9,43 @@
 <body>
 <div class="container">
     <div><h1>Schedule</h1></div>
+    <div class="col-6">
+        <a class="btn btn-outline-danger" th:href="@{/schedule/new}">ADD</a>
+    </div>
     <div>
         <table class="table table-bordered">
             <thead class="thead-dark">
             <tr>
-                <th>id Расписания</th>
-                <th>День недели</th>
+                <th>ID</th>
                 <th>Группа</th>
+                <th>День недели</th>
+                <th>Номер пары</th>
                 <th>Урок</th>
-                <th>Ауд</th>
                 <th>Тип урока</th>
+                <th>Аудитория</th>
+                <th>Действие</th>
             </tr>
             </thead>
             <tbody>
             <th:block th:each="schedule: ${listSchedule}">
                 <tr>
+
                     <td>[[${schedule.id}]]</td>
-                    <td>[[${schedule.weekdayId}]]</td>
                     <td>[[${schedule.group.nameGroup}]]</td>
-                    <td>[[${schedule.lesson.name}]]</td>
-                    <td>[[${schedule.auditorium.numberAud}]]</td>
+                    <td>[[${schedule.weekdayId}]]</td>
+                    <td>[[${schedule.lesson.id}]]</td>
+                    <td>[[${schedule.subject.nameSubject}]]</td>
                     <td>[[${schedule.typeLesson.nameType}]]</td>
+                    <td>[[${schedule.auditorium.numberAud}]]</td>
+                    <td>
+                        <a th:href="@{/schedule/edit/{id}(id=${schedule.id})}">Edit</a>
+                        <a th:href="@{/schedule/delete/{id}(id=${schedule.id})}">Delete</a>
+                    </td>
                 </tr>
             </th:block>
             </tbody>
         </table>
+
     </div>
 
 
