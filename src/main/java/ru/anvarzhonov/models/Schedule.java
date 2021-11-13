@@ -23,14 +23,6 @@ public class Schedule {
     private Long id;
 
 
-//    @Column(name = "id_lesson")
-//    private Long lessonId;
-//    @Column(name = "id_type")
-//    private Long typeId;
-//    @Column(name = "id_group")
-//    private Long groupId;
-//    @Column(name = "id_aud")
-//    private Long audId;
     @Column(name = "id_weekday")
     private Long weekdayId;
 
@@ -52,6 +44,11 @@ public class Schedule {
     @JoinColumn(name = "id_aud", nullable = true)
     @ToString.Exclude
     private Auditorium auditorium;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "id_subject", nullable = false)
+    @ToString.Exclude
+    private Subject subject;
 
 
 

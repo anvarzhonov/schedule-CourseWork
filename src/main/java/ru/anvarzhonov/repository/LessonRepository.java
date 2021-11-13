@@ -10,10 +10,10 @@ import ru.anvarzhonov.models.Lesson;
 public interface LessonRepository extends JpaRepository<Lesson,Long> {
 
     // JPQL
-    @Query(value = "select l from Lesson l where l.name = ?1")
-    Lesson getLessonByName( String name);
-
-    Lesson findByNameContaining(String name);
+//    @Query(value = "select l from Lesson l where l.name = ?1")
+//    Lesson getLessonByName( String name);
+//
+//    Lesson findByNameContaining(String name);
 
 
 }

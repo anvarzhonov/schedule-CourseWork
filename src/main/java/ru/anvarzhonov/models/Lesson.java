@@ -20,8 +20,6 @@ public class Lesson {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name_lesson")
-    private String name;
 
     @Column(name = "begin_lesson")
     private String beginLesson;
