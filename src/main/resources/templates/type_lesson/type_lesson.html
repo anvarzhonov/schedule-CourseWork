@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragments/head :: header"></div>
+<body>
+<div class="container">
+    <div><h1>Типы занятий</h1></div>
+    <div th:replace="fragments/nav :: navbar"></div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Тип занятия</th>
+                <th>Действие</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="type: ${typeLessons}">
+                <tr>
+                    <td>[[${type.id}]]</td>
+                    <td>[[${type.nameType}]]</td>
+                    <td>
+                        <a class="btn btn-success" th:href="@{/type-lesson/edit/{id}(id=${type.id})}"><i
+                                class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" th:href="@{/type-lesson/delete/{id}(id=${type.id})}"><i
+                                class="fa fa-trash-alt"></i></a>
+                    </td>
+                </tr>
+            </th:block>
+                <tr>
+                    <td colspan="4" align="center">
+                        <a class="badge badge-success" th:href="@{/type-lesson/new}">Добавить</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+</div>
+
+<script th:replace="fragments/footer :: scripts"></script>
+
+</body>
+</html>

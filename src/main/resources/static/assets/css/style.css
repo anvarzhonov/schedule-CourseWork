@@ -3837,7 +3837,7 @@ a {
 }
 
 .cd-schedule__event [data-event="event-1"], .cd-schedule-modal[data-event="event-1"] .cd-schedule-modal__header-bg {
-    background: hsl(199, 25%, 46%);
+    /*background: hsl(199, 25%, 46%);*/
     background: var(--cd-color-event-1)
 }
 
