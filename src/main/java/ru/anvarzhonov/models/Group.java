@@ -1,6 +1,8 @@
 package ru.anvarzhonov.models;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,7 +11,8 @@ import java.util.Set;
 
 @Table(name = "groop")
 @Entity
-
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class Group {
     @Id

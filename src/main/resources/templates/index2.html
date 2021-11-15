@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="cd-main-header text-center flex flex-column flex-center">
-    <h1 class="text-xl">Schedule ИКБО-01-19</h1>
+    <h1 class="text-xl">Расписание</h1>
 </header>
 
 <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
@@ -40,19 +40,17 @@
     <div class="cd-schedule__events">
         <ul>
             <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Monday</span></div>
+                <div class="cd-schedule__top-info"><span>Понедельник</span></div>
                 <ul>
                     <th:block th:each="schedule : ${listSchedule}">
                         <th:block th:if="${schedule.weekdayId == 1}">
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 1}">
                                 <a data-start="09:00" data-end="10:30"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-4" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
-                                       th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
-                                       th:text="${schedule.auditorium.numberAud}"></p>
+                                    <p data-event="event-4" th:text="${schedule.typeLesson.nameType}"></p>
+                                    <p data-event="event-4" th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 2}">
@@ -68,23 +66,23 @@
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 3}">
                                 <a data-start="12:40" data-end="14:10"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-4" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 4}">
                                 <a data-start="14:20" data-end="15:50"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -113,12 +111,12 @@
                         <th:block th:if="${schedule.weekdayId == 2}">
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 1}">
                                 <a data-start="09:00" data-end="10:30"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -135,23 +133,23 @@
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 3}">
                                 <a data-start="12:40" data-end="14:10"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-4" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 4}">
                                 <a data-start="14:20" data-end="15:50"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -190,12 +188,12 @@
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 2}">
                                 <a data-start="10:40" data-end="12:10"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -204,20 +202,20 @@
                                    data-content="event-abs-circuit" data-event="event-1" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 4}">
                                 <a data-start="14:20" data-end="15:50"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-4" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -256,12 +254,12 @@
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 2}">
                                 <a data-start="10:40" data-end="12:10"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -278,23 +276,23 @@
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 4}">
                                 <a data-start="14:20" data-end="15:50"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 5}">
                                 <a data-start="16:20" data-end="17:50"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-4" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -305,18 +303,18 @@
 
             </li>
             <li class="cd-schedule__group">
-                <div class="cd-schedule__top-info"><span>Monday</span></div>
+                <div class="cd-schedule__top-info"><span>Пятница</span></div>
                 <ul>
                     <th:block th:each="schedule : ${listSchedule}">
                         <th:block th:if="${schedule.weekdayId == 5}">
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 1}">
                                 <a data-start="09:00" data-end="10:30"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-2"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -333,12 +331,12 @@
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 3}">
                                 <a data-start="12:40" data-end="14:10"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-4" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit" data-event="event-4"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
@@ -347,20 +345,20 @@
                                    data-content="event-abs-circuit" data-event="event-1" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>
                             <li class="cd-schedule__event" th:if="${schedule.lesson.id == 5}">
                                 <a data-start="16:20" data-end="17:50"
-                                   data-content="event-abs-circuit" data-event="event-1" href="#0">
+                                   data-content="event-abs-circuit" data-event="event-2" href="#0">
                                     <em class="cd-schedule__name" th:text="${schedule.subject.nameSubject}">Abs
                                         Circuit</em>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.typeLesson.nameType}"></p>
-                                    <p data-content="event-abs-circuit" data-event="event-1"
+                                    <p data-content="event-abs-circuit"
                                        th:text="${schedule.auditorium.numberAud}"></p>
                                 </a>
                             </li>

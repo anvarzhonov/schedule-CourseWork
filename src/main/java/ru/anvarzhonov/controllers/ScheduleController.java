@@ -1,6 +1,5 @@
 package ru.anvarzhonov.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -8,34 +7,35 @@ import ru.anvarzhonov.models.*;
 import ru.anvarzhonov.repository.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 public class ScheduleController {
-    @Autowired
     private ScheduleRepository scheduleRepository;
+    private final LessonRepository lessonRepository;
+    private final TypeLessonRepository typeLessonRepository;
+    private final AuditoriumRepository auditoriumRepository;
+    private final GroupRepository groupRepository;
+    private final SubjectRepository subjectRepository;
 
-    @Autowired
-    private LessonRepository lessonRepository;
-
-    @Autowired
-    private TypeLessonRepository typeLessonRepository;
-
-    @Autowired
-    private AuditoriumRepository auditoriumRepository;
-
-    @Autowired
-    private GroupRepository groupRepository;
-
-    @Autowired
-    private SubjectRepository subjectRepository;
-
+    public ScheduleController(ScheduleRepository scheduleRepository,
+                              LessonRepository lessonRepository,
+                              TypeLessonRepository typeLessonRepository,
+                              AuditoriumRepository auditoriumRepository,
+                              GroupRepository groupRepository,
+                              SubjectRepository subjectRepository) {
+        this.scheduleRepository = scheduleRepository;
+        this.lessonRepository = lessonRepository;
+        this.typeLessonRepository = typeLessonRepository;
+        this.auditoriumRepository = auditoriumRepository;
+        this.groupRepository = groupRepository;
+        this.subjectRepository = subjectRepository;
+    }
 
     @GetMapping("/schedule")
     public String listSchedule(Model model) {
         List<Schedule> listSchedule = scheduleRepository.findAll();
         model.addAttribute("listSchedule", listSchedule);
-        return "schedule";
+        return "schedule/schedule";
     }
 
     @GetMapping("/schedule/new")
@@ -54,7 +54,7 @@ public class ScheduleController {
         model.addAttribute("listGroups", listGroups);
         model.addAttribute("listSubjects", listSubjects);
 
-        return "scheduleForm";
+        return "schedule/scheduleForm";
     }
 
     @PostMapping("/schedule/save")
@@ -75,22 +75,21 @@ public class ScheduleController {
         List<Subject> listSubjects = subjectRepository.findAll();
 
 
+        model.addAttribute("schedule", schedule);
         model.addAttribute("listLesson", listLessons);
         model.addAttribute("listTypeLesson", listTypeLesson);
         model.addAttribute("listAud", listAuditoriums);
         model.addAttribute("listGroups", listGroups);
-        model.addAttribute("schedule", schedule);
         model.addAttribute("listSubjects", listSubjects);
 
-        return "scheduleForm";
+        return "schedule/scheduleForm";
     }
+
     @GetMapping("/schedule/delete/{id}")
     public String deleteSchedule(@PathVariable(value = "id") Long id, Model model) {
         scheduleRepository.deleteById(id);
         return "redirect:/schedule";
     }
-
-
 
 
 }
