@@ -10,7 +10,7 @@ import java.util.List;
 
 @Controller
 public class ScheduleController {
-    private ScheduleRepository scheduleRepository;
+    private final ScheduleRepository scheduleRepository;
     private final LessonRepository lessonRepository;
     private final TypeLessonRepository typeLessonRepository;
     private final AuditoriumRepository auditoriumRepository;
