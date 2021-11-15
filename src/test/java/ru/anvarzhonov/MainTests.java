@@ -11,7 +11,7 @@ import ru.anvarzhonov.repository.ScheduleRepository;
 import java.util.List;
 
 @SpringBootTest
-class SchedulerApplicationTests {
+class MainTests {
 
 	@Autowired
 	private ScheduleRepository scheduleRepository;
@@ -22,7 +22,6 @@ class SchedulerApplicationTests {
 	@Test
 	public void saveLesson () {
 		Lesson lesson = Lesson.builder()
-				.name("Английский")
 				.beginLesson("10:50")
 				.endLesson("14:20")
 				.build();
@@ -42,17 +41,17 @@ class SchedulerApplicationTests {
 		System.out.println(byAuditorium_id);
 	}
 
-	@Test
-	public void getLessonByName() {
-
-		System.out.println(lessonRepository.getLessonByName("Математика"));
-	}
-
-	@Test
-	public void printFindLessonByNameContaining () {
-
-		System.out.println(lessonRepository.findByNameContaining("Р"));
-	}
+//	@Test
+//	public void getLessonByName() {
+//
+//		System.out.println(lessonRepository.getLessonByName("Математика"));
+//	}
+//
+//	@Test
+//	public void printFindLessonByNameContaining () {
+//
+//		System.out.println(lessonRepository.findByNameContaining("Р"));
+//	}
 
 	@Test
 	public void ll() {
