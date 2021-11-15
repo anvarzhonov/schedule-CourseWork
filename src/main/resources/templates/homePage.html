@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>HomePage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div th:replace="fragments/nav ::navbar"></div>
+<div class="container text-center">
+    <h1>Расписание групп</h1>
+    <div th:each="group: ${groups}">
+        <a class="h2" th:href="@{/schedule/{id}(id=${group.id})}" th:text="${group.nameGroup}"></a>
+    </div>
+
+</div>
+
+
+
+<div th:replace="fragments/footer :: scripts"></div>
+</body>
+</html>

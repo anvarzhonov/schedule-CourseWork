@@ -19,7 +19,7 @@
             <th:block th:each="sub: ${subjects}">
                 <tr>
                     <td>[[${sub.id}]]</td>
-                    <td>[[${subject.nameSubject}]]</td>
+                    <td>[[${sub.nameSubject}]]</td>
                     <td>
                         <a class="btn btn-success" th:href="@{/subject/edit/{id}(id=${sub.id})}"><i
                                 class="fas fa-edit"></i></a>
