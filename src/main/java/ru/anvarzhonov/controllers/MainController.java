@@ -20,7 +20,7 @@ public class MainController {
     @GetMapping("/schedule/{id}")
     public String showIndex(@PathVariable("id") Long id, Model model) {
         model.addAttribute("listSchedule",scheduleRepo.findAllByGroupId(id));
-
+        model.addAttribute("group", groupRepository.findNameGroupById(id));
         return "index2";
     }
 
