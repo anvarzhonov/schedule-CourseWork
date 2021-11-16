@@ -10,9 +10,12 @@
     <title>Schedule Template | CodyHouse</title>
 </head>
 <body>
+
 <header class="cd-main-header text-center flex flex-column flex-center">
-    <h1 class="text-xl">Расписание</h1>
+    <h1 th:text=" ${ 'Расписание для ' + group.nameGroup}">Расписание</h1>
+    <a class="btn btn-success" th:href="@{/homepage}"><i class="fas fa-arrow-alt-circle-left"></i></a>
 </header>
+
 
 <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule"
      th:if="${not #lists.isEmpty(listSchedule)}">
@@ -394,7 +397,7 @@
     <div class="cd-schedule__cover-layer"></div>
 </div> <!-- .cd-schedule -->
 <div class="bg-danger text-white text-center h2" th:unless="${not #lists.isEmpty(listSchedule)}">
-    Расписание для этой группы ещё не ввели. Вернитесь позже!
+    Расписание для этой группы ещё не введено. Вернитесь позже!
 </div>
 <script src="../static/assets/js/util.js" th:src="@{/assets/js/util.js}"></script>
 <!-- util functions included in the CodyHouse framework -->

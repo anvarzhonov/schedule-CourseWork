@@ -3646,6 +3646,9 @@ a {
     }
 }
 
+.cd-schedule__event {
+    height: 160px;
+}
 @media (min-width: 80rem) {
     .js .cd-schedule__events {
         width: calc(100% - 60px);
@@ -3746,7 +3749,7 @@ a {
     -ms-flex-negative: 0;
     flex-shrink: 0;
     float: left;
-    height: 150px;
+    height: 160px;
     width: 70%;
     max-width: 300px;
     margin-right: 1.25em;
